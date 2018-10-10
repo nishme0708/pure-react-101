@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="react-container"></div>
+    <!-- React library & ReactDOM-->
+    <script src="https://unpkg.com/react@15.4.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.4.2/dist/react-dom.js"></script>
+    <script>
+        let name = React.createElement("h1", null, "Nishant Mehta");
+        ReactDOM.render(name, document.getElementById("react-container"));
+        let list = React.createElement("ul", null, React.createElement("li", { className: 'listItem' }, "Item 1"),
+            React.createElement("li", { className: 'listItem' }, "Item 2"),
+            React.createElement("li", { className: 'listItem' }, "Item 3")
+        );
+        ReactDOM.render(list, document.getElementById('react-container'));
+
+        let listItems = ['Item 4', 'Item 5', 'Item 6'];
+        let list1 = React.createElement('ul', { className: 'listItems' }, listItems.map((item, index) => React.createElement('li', { key: index }, item)));
+        ReactDOM.render(list1, document.getElementById('react-container'));
+
+    </script>
+</body>
+
+</html>
